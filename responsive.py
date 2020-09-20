@@ -18,12 +18,12 @@ class ResponsiveTester:
         self.browser.get(url)
 
         for size in sizes:
-        self.browser.set_window_size(size, BROWSER_HEIGHT)
-        self.browser.execute_script("window.scrollTo(0, 0)")
-        time.sleep(1)
-        scroll_size = self.browser.execute_script(
-            "return document.body.scrollHeight")
-        total_sections = ceil(scroll_size / BROWSER_HEIGHT)
+            self.browser.set_window_size(size, BROWSER_HEIGHT)
+            self.browser.execute_script("window.scrollTo(0, 0)")
+            time.sleep(1)
+            scroll_size = self.browser.execute_script(
+                "return document.body.scrollHeight")
+            total_sections = ceil(scroll_size / BROWSER_HEIGHT)
 
         for section in range(total_sections+1):
             self.browser.execute_script(
